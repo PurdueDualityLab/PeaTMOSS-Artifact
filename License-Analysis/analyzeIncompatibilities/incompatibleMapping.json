@@ -1,0 +1,57 @@
+{
+    "apache-2.0": [],
+    "mit": [],
+    "bigscience-bloom-rail-1.0": [
+        "apache-2.0"
+    ],
+    "cc-by-4.0": [],
+    "afl-3.0": [],
+    "gpl-3.0": [
+        "no license",
+        "cc-by-sa-2.5",
+        "gpl-2.0",
+        "gpl-3.0-plus",
+        "cc-by-4.0",
+        "cc-by-sa-4.0",
+        "cc-by-nc-sa-4.0",
+        "cc0-1.0",
+        "apache-2.0",
+        "cecill-c",
+        "bsd-3-clause",
+        "mit",
+        "cc-by-nc-4.0",
+        "gpl-1.0-plus",
+        "gpl-2.0-plus",
+        "proprietary-license"
+    ],
+    "gpl-2.0": [
+        "no license",
+        "gpl-3.0"
+    ],
+    "agpl-3.0": [
+        "no license"
+    ],
+    "cc-by-nc-sa-4.0": [
+        "no license"
+    ],
+    "cc-by-nc-4.0": [],
+    "no license": [],
+    "bsd-3-clause": [],
+    "mpl-2.0": [
+        "mit"
+    ],
+    "mit-0": [],
+    "lgpl-3.0": [
+        "no license",
+        "other-permissive"
+    ],
+    "lgpl-3.0-plus": [
+        "no license",
+        "other-permissive"
+    ],
+    "lgpl-2.1": [],
+    "cc0-1.0": [],
+    "cc-by-sa-4.0": [],
+    "bsd-2-clause": [],
+    "epl-2.0": []
+}

@@ -1,0 +1,23 @@
+Given model card of Huggingface {domain} model : {model} fill in the following model schema structure in 'information_extraction' funcion
+    Rules:
+     - rule 1: Adhere strictly to the schema structure
+     - rule 2: If you are confident a property is not present in the documents, leave as empty string in the schema
+    
+     - language: return supported languages for this model
+     - datasets: return dataset used to train or finetune model, not the upstream model of the model
+     - license: return this model's license
+     - github_repo: return github repository of this model
+     - paper: return research paper of this model
+     - base_model: return huggingface model ID of upstream model
+     - parameter_count: return the number of parameters, represented with "M", "B", and "T" as million, billion, and trillion
+     - hardware: extract any hardware associated with the model
+     - carbon_emitted: extract the carbon emissions amount of the model
+     - hyper_parameters: extract possible hyperparameters
+     - evaluation: extract evaluation metric/tasks and their respective evaluation results or a url to evaluation results
+     - limitation_and_biases: extract a short summary of limitation and biases of the model
+     - demo: extract any links, code snippets, or small paragraphs on how to use the model
+     - grant: extract the grant/sponsors of this model
+     - input_format: extract the input format/requirement for this model
+     - output_format: extract the output format of this model
+ 
+total elapsed time: 0 hours 1 minutes 40 seconds

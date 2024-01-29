@@ -1,0 +1,67 @@
+{
+  "general_metadata": {
+    "model_type": {"type": "string"},
+    "model_tasks": {"type": "string"},
+    "frameworks": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "datasets": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "license": {"type": "string"},
+    "github": {"type": "string", "format": "uri"},
+    "paper": {"type": "string", "format": "uri"},
+    "upstream_model": {"type": "string"},
+    "parameter_count": {"type": "string"},
+    "hyper_parameters": {
+      "type": "object",
+      "properties": {
+        "epochs": {"type":"string"},
+        "batch_size": {"type":"string"},
+        "learning_rate": {"type":"string"},
+        "optimizer": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "evaluation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "test": {"type": "string"},
+          "result":{"type": "string"}
+        },
+        "required": ["test", "results"]
+      }
+    },
+    "hardware": {"type":"string"},
+    "limitation_and_bias": {"type":"string"},
+    "demo": {"type":"string"},
+    "input_format": {"type":"string"},
+    "output_format": {"type":"string"}
+  },
+  "task_specific_metadata":{
+    "multimodal":{
+    },
+    "computer-vision": {
+      "input_preprocessing": {"type": "string"},
+      "input_size": {"type":"string"}
+    },
+    "natural-language-processing": {
+      "max_sequence_length": {"type": "string"},
+      "vocabulary_size": {"type": "string"}
+    },
+    "audio": {
+      "sample_rate": {"type": "string"}
+    },
+    "tabular": {
+    },
+    "reinforcement-learning": {
+      "agent": {"type": "string"},
+      "training_environment": {"type": "string"},
+      "SB3": {"type": "boolean"}
+    }
+  }
+}

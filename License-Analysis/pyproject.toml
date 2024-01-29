@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "msr-2024"
+version = "0.1.0"
+description = ""
+authors = ["Nicholas M. Synovic <nicholas.synovic@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+jupyter = "^1.0.0"
+huggingface-hub = "^0.18.0"
+requests = "^2.31.0"
+progress = "^1.6"
+plotly = "^5.18.0"
+pandas = "^2.1.2"
+click = "^8.1.7"
+pysankey = "^0.0.1"
+matplotlib = "^3.8.1"
+seaborn = "^0.13.0"
+sqlalchemy = "^2.0.23"
+tqdm = "^4.66.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

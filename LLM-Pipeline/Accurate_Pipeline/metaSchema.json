@@ -1,0 +1,104 @@
+{
+  "pre_processed_metadata":{
+    "domain": {
+      "type": "array", 
+      "items": {"type": "string"}
+    },
+    "model_task": {
+      "type": "array", 
+      "items": {"type": "string"}
+    },
+    "frameworks": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "libraries": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "extract_metadata": {
+    "datasets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties":{
+          "dataset_name": {"type":"string"},
+          "url": {"type": "string"}
+        }
+      }
+    },
+    "license": {"type":"string"},
+    "github_repo": {"type": "string"},
+    "paper": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties":{
+          "paper title": {"type": "string"},
+          "paper_url": {"type": "string"}
+        }
+      }
+    },
+    "base_model": {
+      "type": "object",
+      "properties":{
+        "model_name": {"type": "string"},
+        "url": {"type": "string"}
+      }
+    },
+    "parameter_count": {
+          "type": "string",
+          "pattern": "^(|[0-9]+[MBT])$"
+    },
+    "hardware": {
+      "type": "object",
+      "properties":{
+        "hardware_name": {"type": "string"},
+        "hours_used": {"type": "string"},
+        "cloud_provider": {"type": "string"},
+        "compute_region": {"type": "string"}
+      }
+    },
+    "carbon_emitted": {
+      "type": "string"
+    },
+    "hyper_parameters": {
+      "items":{
+        "type": "object",
+        "properties": {
+          "hyper_parameter": {"type":"string"},
+          "value": {"type":"string"}
+        },
+        "required":["hyper_parameter", "value"]
+      }
+    },
+    "evaluation": {
+      "oneOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "test/metric": {"type": "string"},
+              "dataset": {"type": "string"},
+              "result": {"type": "string"}
+            },
+            "required": ["test", "result"]
+          }
+        },
+        {
+          "type": "object",
+          "properties":{
+            "link": {"type": "string"}
+          }
+        }
+      ] 
+    },
+    "limitation_and_bias": {"type":"string"},
+    "demo": {"type":"string"},
+    "grant": {"type":"string"},
+    "input_format": {"type":"string"},
+    "output_format": {"type":"string"}
+  }
+}

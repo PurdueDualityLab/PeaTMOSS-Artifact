@@ -1,0 +1,77 @@
+otherCount.py
+
+This Python script, otherCount.py, is to be run before licenseCompatibilitiesSankey.py. It creates gh_other.csv, the licenses that are grouped into the "other" sink node in the created Sankey diagram, based on a minimum number of occurances, and hf_other.csv, the licenses that are grouped into the "other" source node in the created Sankey diagram, based on a minimum number of occurances. 
+
+Necessary Globals to Set:
+1. 'otherNum'
+    The minimum number of occurances for a license to not be placed in the "other" node.
+2. 'hf_license_to_gh_repo_csv'
+    described below, implementation is similar.
+3. 'gh_repo_url_column'
+    described below, implementation is similar.
+4. 'hf_license_column'
+    described below, implementation is similar.
+
+Executing the Script:
+To run the script, execute the following command or equivalent in your terminal or command prompt:
+python .\otherCount.py
+
+
+
+
+licenseCompatibilitiesSankey.py
+
+This Python script, licenseCompatibilitiesSankey.py, is designed to create a Sankey Diagram of Hugging Face (HF) licenses to downstream GitHub (GH) license relations. The relations compatibility is determined by the also present 'Linux-Foundation-OSS-License-Compatibility.xlsx'. The outputted Sankey has red pathed relations being incompatibilities, blue pathed relations being compatible, and grey pathed relations being unknown as their relation is either unknown in the table, or one or both of the licenses are not present in the table. Information about the data is also printed to the terminal at the completion of the script. The script skips any GH repository relation with more than one license present in its current form.
+
+Necessary Globals to Set:
+1. 'hf_license_to_gh_repo_csv'
+2. 'gh_repo_url_column'
+3. 'hf_repo_url_column'
+4. 'hf_license_column'
+5. 'gh_repo_to_gh_license_json'
+
+see example.csv for the format of an inputted .csv 
+
+The CSV file should have at least two columns to generate the Sankey: one for the GitHub repository's URL and another for the corresponding license of the utilized PTM from Hugging Face.
+In the case of example.csv, gh_repo_url_col=0 and hf_license_col=1. hf_repo_url_column is a third column which is used to display at the end of the script the percent number of HF repos analyzed. 
+
+see example.json for the format of an inputted .json
+
+The JSON file should contain a mapping of GitHub repositories to their corresponding licenses as key-list pairs. The key should be the GitHub "{username}/{repo}" found in the URL of a GitHub repository. The paired list to the key is any applicable licenses to the GitHub repository. Licenses in this project are stored by their SPDX Identifier.
+
+Optional Global to Manipulate:
+1. 'aliases'
+    Dictionary of Key-Value pairs
+    Stores an alias to a license as a key and the SPDX Identifier as the value
+
+Executing the Script:
+To run the script, execute the following command or equivalent in your terminal or command prompt:
+python .\licenseCompatibilitiesSankey.py
+
+This will execute the script and display the Sankey.
+
+Also, written to stdout is:
+1. unanalyzedHFLicenses
+    The set of upstream HF licenses which are not present in the Linux Foundation Table. This output can be used to find if aliases of licenses in the table are present in the data, then can be added to 'aliases'.
+2. unanalyzedGHLicenses
+    The set of downstream GH licenses which are not present in the Linux Foundation Table. This output can be used to find if aliases of licenses in the table are present in the data, then can be added to 'aliases'.
+3. Percent HF Licenses Analyzed
+    Percent of present HF licenses in the data that were analyzed, as their relation with a downstream GH license is present in the Linux Foundation Table.
+4. Percent GH Licenses Analyzed
+    Percent of present GH licenses in the data that were analyzed, as their relation with an upstream HF license is present in the Linux Foundation Table.
+5. Percent HF Repos Analyzed
+    Percent of the HF repositories present in the data that were analyzed. Certain repositories may not have been analyzed as the downstream GH license all the relations did not contain just a singular license.
+6. Percent GH Repos Analyzed
+    Percent of the GH repositories present in the data that were analyzed. Certain repositories may not have been analyzed as the downstream GH license in the relation did not contain just a singular license.
+7. Skipped Relations
+    Number of instances where certain repositories may not have been analyzed as the downstream GH license in the relation did not contain just a singular license.
+8. Total Number of Covered Relations
+    Number of all relations in the data which were analyzed.
+9. Identical Relations
+    Identical relations present in the analyzed data, as a number and percent of total analyzed relations.
+10. Compatible Relations
+    Compatible relations present in the analyzed data, as a number and percent of total analyzed relations.
+11. Incompatible Relations
+    Incompatible relations present in the analyzed data, as a number and percent of total analyzed relations.
+12. Unkown Relations
+    Unkown relations present in the analyzed data, as a number and percent of total analyzed relations.
