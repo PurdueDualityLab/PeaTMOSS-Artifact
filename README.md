@@ -62,7 +62,7 @@ tar --strip-components=4 -xvzf {name}.tar.gz
 If you do not do this, you will have 4 extraneous parent directories that encase the repository.
 
 
-The script that we used to generate figures in $6 is available in [script_plot.py](/PeaTMOSS-Demo/script_plot.py)
+The script that we used to generate figures in $6 is available in [script_plot.py](/Plots/script_plot.py)
 
 ## Globus
 
